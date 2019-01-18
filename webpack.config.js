@@ -6,14 +6,24 @@ module.exports = {
         main: path.join(__dirname, 'index.js')
     },
     output: {
-        path: path.join(__dirname, 'public')
+        path: path.join(__dirname, 'public'),
+        publicPath: '/'
     },
     devServer: {
         port: 3000,
-        open: 'chrome'
+        open: 'chrome',
+        historyApiFallback: true
     },
     mode: 'development',
-    module: {},
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader'
+            }
+        ]
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'index.html')
