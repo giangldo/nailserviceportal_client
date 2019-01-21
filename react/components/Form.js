@@ -31,7 +31,7 @@ class Form extends Component {
             submitted: true
         });
 
-        this.props.onSubmit(name, this.state.fields);
+        this.props.onClick(name, this.state.fields);
 
     }
 
@@ -61,7 +61,12 @@ class Form extends Component {
                                         value: this.state.fields[field.inputKey]
                                     };
 
-                                    return <FormField key={field.inputKey} tagName={field.fieldTagName || 'li'} labelField={labelField} inputField={inputField} onChange={this.onFieldChange} />
+                                    return <FormField 
+                                        key={field.inputKey} 
+                                        tagName={field.fieldTagName || 'li'} 
+                                        labelField={labelField} 
+                                        inputField={inputField} 
+                                        onChange={this.onFieldChange} />
                                 })
                             }
                         </Fragment>

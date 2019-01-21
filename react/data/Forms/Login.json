@@ -1,19 +1,8 @@
 {
     "id": null,
-    "title": "Signup",
+    "title": "Login",
     "tagName": null,
     "fields": [
-        {
-            "labelClass": null,
-            "labelName": "Name",
-            "inputClass": null,
-            "inputKey": "name",
-            "inputType": "text",
-            "inputPlaceholder": null,
-            "inputValue": null,
-            "fieldTagName": null,
-            "fieldClass": null
-        },
         {
             "labelClass": null,
             "labelName": "Email",
@@ -39,7 +28,7 @@
     ],
     "buttons": [
         {
-            "buttonText": "Signup",
+            "buttonText": "Login",
             "buttonType": "button",
             "buttonName":"submit",
             "buttonValue":"",

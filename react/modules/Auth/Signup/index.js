@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from 'react';
 
 import Form from '../../../components/Form';
-import AuthApi from '../../../api/Auth';
 import jsonForm from '../../../data/Forms/Signup.json';
+
+import AuthApi from '../../../api/AuthApi';
 
 class Signup extends Component {
     
@@ -18,7 +19,15 @@ class Signup extends Component {
         
     };
 
-    onSignupSubmit = (name, data) => {
+    onFormClick = (name, data) => {
+        switch(name) {
+            case 'submit':
+
+            break;
+            case 'cancel':
+            break;
+            default:
+        }
         //const res = await 
         console.log(name);
         console.log(data);
@@ -30,7 +39,7 @@ class Signup extends Component {
         return (
             <Fragment>
                 <Form 
-                    onSubmit={this.onSignupSubmit} 
+                    onClick={this.onFormClick} 
                     title={title} 
                     tagName={tagName || 'ul'} 
                     fields={fields} 
