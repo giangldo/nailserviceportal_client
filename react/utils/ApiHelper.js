@@ -3,7 +3,7 @@ import AuthHelper from './AuthHelper';
 
 class ApiHelper {
     constructor() {
-        const apiBaseUrl = ConfigHelper.get('apiBaseUrl');
+        const apiBaseUrl = ConfigHelper.get('API_BASE_URL');
         this.store = null;
     }
 

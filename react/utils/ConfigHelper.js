@@ -1,14 +1,8 @@
-import { dev, prod } from '../config';
+import config from '../config';
 
 class ConfigHelper {
     constructor() {
-        const env = process.env.NODE_ENV;
-
-        if(env === 'production') {
-            this.config = { ...prod };
-        } else {
-            this.config = { ...dev };
-        }    
+        this.config = { ...config };
     }
 
     get(keys) {
