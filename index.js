@@ -1,1 +1,1 @@
-require('./react');
+import './react';

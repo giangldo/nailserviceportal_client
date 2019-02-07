@@ -5,7 +5,7 @@ class ConfigHelper {
         this.config = { ...config };
     }
 
-    get(keys) {
+    get(keys = '') {
         const splitKeys = keys.split('.');
 
         return splitKeys.reduce((accumulator, key, index) => {

@@ -1,9 +1,10 @@
 import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
-import Form from '../../../components/Form';
-import jsonForm from '../../../data/Forms/Signup.json';
+import Form from '../../components/Form';
+import { SignupForm } from '../../data/Forms';
 
-import AuthApi from '../../../api/AuthApi';
+import AuthApi from '../../api/AuthApi';
 
 class Signup extends Component {
     
@@ -14,23 +15,17 @@ class Signup extends Component {
     componentWillMount() {
         // data can fetch from api
         this.setState({
-            form: JSON.parse(JSON.stringify(jsonForm))
+            form: SignupForm
         });
         
     };
 
-    onFormClick = (name, data) => {
+    onFormClick = async (name, data) => {
         switch(name) {
-            case 'submit':
-
-            break;
-            case 'cancel':
-            break;
             default:
+                const res = await AuthApi.signup(data);
+                console.log(res);
         }
-        //const res = await 
-        console.log(name);
-        console.log(data);
     }
 
     render() {
@@ -45,6 +40,8 @@ class Signup extends Component {
                     fields={fields} 
                     buttons={buttons}
                 />
+                <Link to='/auth/login'>Go to login</Link>
+                <Link to='/auth/forgot'>Forgot password</Link>
             </Fragment>
         );
     }

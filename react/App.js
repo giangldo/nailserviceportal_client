@@ -1,26 +1,16 @@
-import React from 'react';
-import { BrowserRouter, Route, Switch, Redirect, withRouter } from 'react-router-dom';
+import React, { Component } from 'react';
 
-import AuthRoute from './components/AuthRoute';
-import ComponentHelper from './utils/ComponentHelper';
+import AppContainer from './AppContainer';
+import Template from './components/Template';
+import { Admin } from './data/Layouts'; 
+import { Nav } from './data/Menus';
 
-const AppRouter = withRouter(() => {
-    return (
-        <Switch>
-            <Redirect exact from="/" to="/dashboard" />
-            <AuthRoute path="/dashboard" component={ ComponentHelper.render("Dashboard") } />
-            <Route path="/auth" component={ ComponentHelper.render("Auth") } />
-        </Switch>
-    );
-});
-
-const App = () => {
-    console.log(process.env.NODE_ENV);
-    return (
-        <BrowserRouter>
-            <AppRouter />
-        </BrowserRouter>
-    );
+class App extends Component {
+    render() {
+        return (
+            <Template layout={ Admin } nav={ Nav } />                 
+        );
+    }
 }
 
-export default App;
+export default AppContainer(App);

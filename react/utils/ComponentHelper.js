@@ -3,7 +3,8 @@ import Loadable from 'react-loadable';
 
 class ComponentHelper {
     render(path) {
-        return Loadable(
+
+        return Loadable (
             {
                 loader: () => import(`../modules/${path}`),
                 loading: () => "loading"

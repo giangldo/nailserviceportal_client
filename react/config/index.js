@@ -1,6 +1,6 @@
 if(process.env.NODE_ENV === 'production') {
     
-    export default {
+    module.exports = {
         HOST: "",
         API_BASE_URL: "",
         WEBSOCKET_URL: ""
@@ -8,7 +8,7 @@ if(process.env.NODE_ENV === 'production') {
 
 } else {
 
-    export default {
+    module.exports = {
         HOST: "http://localhost:3000",
         API_BASE_URL: "http://localhost:5000",
         WEBSOCKET_URL: "ws://localhost:5000/cable"

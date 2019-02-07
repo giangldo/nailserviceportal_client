@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import React from 'react';
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 
 import Admin from './Admin';
 
-class Dashboard extends Component {
-    render() {
-        return(
-            <Switch>
-                <Redirect exact from="/dashboard" to="/dashboard/admin" />
-                <Route path="/dashboard/admin" component={Admin} />
-            </Switch>
-        );
-    }
-}
+const Dashboard = withRouter(() => {
+    return(
+        <Switch>
+            <Redirect exact from="/dashboard" to="/dashboard/admin" />
+            <Route path="/dashboard/admin" component={Admin} />
+        </Switch>
+    );
+});
 
 export default Dashboard;
